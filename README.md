@@ -21,11 +21,20 @@ The system architecture of Toffee Store consists of three main layers:
 2. **Backend Layer**: Implements the business logic of the application, handling user requests and interactions.
 3. **Frontend Layer**: Provides an intuitive user interface for customers to browse products, place orders, and manage accounts.
 
-## Included Library
+## Security Measures
 
-The project includes the `javax.mail-1.6.2.jar` library, located in the `lib` folder. This library is essential for sending OTPs via email during the registration process. It enables secure registration by ensuring that users verify their email addresses before completing the registration process.
+- **Password Encryption**: Passwords are encrypted using the SHA-256 algorithm before being stored in the database, ensuring that sensitive user information remains secure.
+- **Email Verification**: During registration, users receive a one-time password (OTP) via email for email verification, adding an extra layer of security to the registration process.
 
-To ensure proper functionality, make sure to install or include this library in your project setup. If you're using an integrated development environment (IDE) like Eclipse or IntelliJ IDEA, you can add the library to your project dependencies. Alternatively, you can manually include the JAR file in your project's build path.
+## Included Libraries 
+
+The project includes the following libraries:
+
+1. **JavaBeans Activation Framework (JAF)**: The `activation.jar` library, located in the `lib` folder. This library is essential for handling MIME data types and file types based on MIME in a platform-independent manner. Ensure that you include this library in your project setup.
+
+2. **JavaMail API**: The `javax.mail-1.6.2.jar` library, also located in the `lib` folder. This library is crucial for sending OTPs via email during the registration process. Ensure that you include this library in your project setup for proper functionality.
+
+Make sure to include both libraries in your project to enable the necessary functionalities.
 
 ## Classes Overview
 
@@ -68,6 +77,8 @@ To get started with the Toffee Store project, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Make sure to include the `javax.mail-1.6.2.jar` library in your project's dependencies.
-3. Run the `Main` class to start the application.
+3. Ensure that the `activation.jar` library (Java Activation Framework) is included in your project's dependencies.
+4. Modify lines 34 and 35 in the `SendOTPEmail.java` class with your email credentials to send OTPs from your desired email address.
+5. Run the `Main` class to start the application.
 
 
